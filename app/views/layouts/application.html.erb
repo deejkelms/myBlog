@@ -3,10 +3,35 @@
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="sidebar">
+    <div id="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.svg" %>
+      <% end %>
+    </div>
+
+    <ul>
+      <li class="category">Website</li>
+      <li><%= link_to "Blog", root_path %></li>
+      <li><%= link_to "About", about_path %></li>
+    </ul>
+
+    <ul>
+      <li class="category">Social</li>
+      <li><a href="https://twitter.com/KelmansonDj">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/derek-kelmanson-49965541">LinkedIn</a></li>
+      <li><a href="https://plus.google.com/u/0/111860017997673801924/posts">Google +</a></li>
+      <li><a href="https://www.instagram.com/djkelmanson/">Instagram</a></li>
+      <li><a href="https://github.com/deejkelms">GitHub</a></li>
+      <li><a href="mailto:dkelmanson@gmail.com">Email</a></li>
+    </ul>
+  </div>
 
 <%= yield %>
 
