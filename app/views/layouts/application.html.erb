@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="sidebar">
-    <div id="logo">
+    <div id="logo" class="img-responsive">
       <%= link_to root_path do %>
         <%= image_tag "logo.svg" %>
       <% end %>
@@ -19,7 +19,7 @@
     <ul>
       <li class="category">Website</li>
       <li><%= link_to "Blog", root_path %></li>
-      <li><%= link_to "About", about_path %></li>
+      <li>About</li>
     </ul>
 
     <ul>
@@ -31,9 +31,25 @@
       <li><a href="https://github.com/deejkelms">GitHub</a></li>
       <li><a href="mailto:dkelmanson@gmail.com">Email</a></li>
     </ul>
+
+    <p class="sign_in">Insert FACEBOOK</p>
   </div>
 
-<%= yield %>
+  <div id="main_content">
+    <div id="header">
+      <p>All Posts</p>
+
+      <div class="buttons">
+        <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <button class="button">Log Out</button>
+      </div>
+
+    </div>
+
+    <%= yield %>
+  </div>
+
+
 
 </body>
 </html>
